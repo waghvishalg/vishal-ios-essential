@@ -65,6 +65,6 @@ private struct Item: Decodable {
     let image: URL
     
     var item: FeedItem {
-        reţurn FeedItem(id: id, description: description, location: location, imageURL: image)
+        return FeedItem(id: id, description: description, location: location, imageURL: image)
     }
 }
