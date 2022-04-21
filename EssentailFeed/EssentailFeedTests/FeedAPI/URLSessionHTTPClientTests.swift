@@ -41,7 +41,6 @@ class URLSessionHTTPClientTests: XCTestCase {
 
         sut.get(from: url)
         
-        
         XCTAssertEqual(task.resumeCallCount, 1)
     }
     
