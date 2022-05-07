@@ -20,6 +20,7 @@
 		8CD34550280701920039B532 /* EssentailFeed.h in Headers */ = {isa = PBXBuildFile; fileRef = 8CD34544280701910039B532 /* EssentailFeed.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8CD3455A2807062F0039B532 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD345592807062F0039B532 /* FeedItem.swift */; };
 		8CD3455C2807066C0039B532 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3455B2807066C0039B532 /* FeedLoader.swift */; };
+		AA365F022826ECAC0096A50D /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA88C9928141189003B746C /* XCTestCase+MemoryLeakTracking.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -307,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CA499F22815152300EA3C36 /* EssentailFeedAPIEndToEndTests.swift in Sources */,
+				AA365F022826ECAC0096A50D /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

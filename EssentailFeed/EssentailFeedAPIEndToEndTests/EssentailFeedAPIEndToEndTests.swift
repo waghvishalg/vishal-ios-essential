@@ -34,7 +34,7 @@ class EssentailFeedAPIEndToEndTests: XCTestCase {
     
     // MARK: - Helper
     
-    private func getFeedResult() -> LoadFeedResult? {
+    private func getFeedResult(file: StaticString = #file, line: UInt = #line) -> LoadFeedResult? {
         let testServerURL = URL(string: "https://static1.squarespace.com/static/5891c5b8d1758ec68ef5dbc2/t/5c52cdd0b8a045df091d2fff/1548930512083/feed-case-study-test-api-feed.json")!
         
         // Run the test multiple time within a min with this URL https://static1.squarespace.com/static/5891c5b8d1758ec68ef5dbc2/t/5c52cdd0b8a045df091d2fff/1548930512083/feed-case-study-test-api-feed.json
@@ -42,6 +42,9 @@ class EssentailFeedAPIEndToEndTests: XCTestCase {
         
         let client = URLSessionHTTPClient()
         let loader = RemoteFeedLoader(url: testServerURL, client: client)
+        
+        trackMemoryLeaks(client, file: file, line: line)
+        trackMemoryLeaks(loader, file: file, line: line)
         
         let exp = expectation(description: "wair for load completion")
         
