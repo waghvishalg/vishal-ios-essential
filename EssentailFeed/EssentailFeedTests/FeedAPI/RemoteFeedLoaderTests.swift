@@ -137,6 +137,7 @@ class RemoteFeedLoaderTests: XCTestCase {
         ].reduce(into:[String: Any]()) { (acc, e) in
             if let value = e.value { acc[e.key] = value }
         }
+        
         return (item, json)
     }
     
