@@ -19,7 +19,7 @@ class LocalFeedLoader {
     
     func save(_ items: [FeedItem], completion: @escaping (Error?) -> Void){
         store.deletionCacheFeed { [unowned self]error in
-            completion(error¸)
+            completion(error)
             if error == nil {
                 self.store.insert(items, timestamp: self.currentDate())
             }
