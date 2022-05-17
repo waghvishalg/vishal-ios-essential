@@ -48,7 +48,7 @@ class FeedStore {
     }
     
     func insert(_ items: [FeedItem],timestamp: Date) {
-¸        insertions.append((items, timestamp))
+        insertions.append((items, timestamp))
     }
     
 }
