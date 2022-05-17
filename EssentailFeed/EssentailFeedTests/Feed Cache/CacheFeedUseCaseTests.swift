@@ -16,20 +16,37 @@ class LocalFeedLoader {
     }
     
     func save(_ items: [FeedItem]){
-        store.deletionCacheFeed()
+        store.deletionCacheFeed { [unowned self]error in
+            if error == nil {
+                self.store.insert(items)
+            }
+        }
     }
     
 }
 
 class FeedStore {
+    
+    typealias DeletionCompletion = (Error?) -> Void
     var deleteCacheFeedCount = 0
     var inserionCallCount = 0
     
-    func deletionCacheFeed(){
+    private var delectCompletions = [DeletionCompletion]()
+    func deletionCacheFeed(completion: @escaping DeletionCompletion){
         deleteCacheFeedCount += 1
+        delectCompletions.append(completion)
     }
     
     func completeDeletion(with error: Error, at index: Int = 0) {
+        delectCompletions[index](error)
+    }
+    
+    func completeDeletionSuccessfully(at index: Int = 0){
+        delectCompletions[index](nil)
+    }
+    
+    func insert(_ items: [FeedItem]) {
+        inserionCallCount += 1
         
     }
     
@@ -59,7 +76,16 @@ class CacheFeedUseCaseTests: XCTestCase {
         store.completeDeletion(with: deletionError)
         
         XCTAssertEqual(store.inserionCallCount, 0)
+    }
+    
+    func test_save_requestNewCacheInsetionOnSuccessfulDeletion(){
+        let (sut, store) = makeSUT()
+        let items = [uniqueItem(),uniqueItem()]
         
+        sut.save(items)
+        store.completeDeletionSuccessfully()
+        
+        XCTAssertEqual(store.inserionCallCount, 1)
     }
     
     //MARK: - Helper
