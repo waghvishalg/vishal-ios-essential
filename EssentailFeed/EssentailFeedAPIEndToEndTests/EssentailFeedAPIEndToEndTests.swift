@@ -13,16 +13,16 @@ class EssentailFeedAPIEndToEndTests: XCTestCase {
     func test_endToEndTestServerGETFeedResult_matchesFixedTestAccountData(){
         
         switch getFeedResult() {
-        case let .success(items)?:
-            XCTAssertEqual(items.count,8,"Expcted 8 items in the test account feed")
-            XCTAssertEqual(items[0], expectedItems(at: 0))
-            XCTAssertEqual(items[1], expectedItems(at: 1))
-            XCTAssertEqual(items[2], expectedItems(at: 2))
-            XCTAssertEqual(items[3], expectedItems(at: 3))
-            XCTAssertEqual(items[4], expectedItems(at: 4))
-            XCTAssertEqual(items[5], expectedItems(at: 5))
-            XCTAssertEqual(items[6], expectedItems(at: 6))
-            XCTAssertEqual(items[7], expectedItems(at: 7))
+        case let .success(imageFeed)?:
+            XCTAssertEqual(imageFeed.count,8,"Expcted 8 images in the test account image feed")
+            XCTAssertEqual(imageFeed[0], expectedImage(at: 0))
+            XCTAssertEqual(imageFeed[1], expectedImage(at: 1))
+            XCTAssertEqual(imageFeed[2], expectedImage(at: 2))
+            XCTAssertEqual(imageFeed[3], expectedImage(at: 3))
+            XCTAssertEqual(imageFeed[4], expectedImage(at: 4))
+            XCTAssertEqual(imageFeed[5], expectedImage(at: 5))
+            XCTAssertEqual(imageFeed[6], expectedImage(at: 6))
+            XCTAssertEqual(imageFeed[7], expectedImage(at: 7))
 
             
         case let .failure(error)?:
@@ -58,12 +58,12 @@ class EssentailFeedAPIEndToEndTests: XCTestCase {
         return receivedResult
     }
     
-    private func expectedItems(at index: Int) -> FeedItem {
-        return FeedItem(
+    private func expectedImage(at index: Int) -> FeedImage {
+        return FeedImage(
             id: id(at: index),
             description: description(at: index),
             location: location(at: index),
-            imageURL: imageURL(at: index))
+            url: imageURL(at: index))
     }
     
     private func id(at index: Int) -> UUID {

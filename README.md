@@ -109,13 +109,13 @@ Given the customer doesn't have connectivity
 - Feed items
 
 #### Primary course (happy path):
-1. Execute "Save Feed Items" command with above data.
-2. System encodes feed items.
+1. Execute "Load Image Feed" command with above data.
+2. System encodes Image items.
 3. System timestamps the new cache.
 4. System replaces the cache with new data.
 5. System delivers success message.
 2. System deletes old cache data.
-3. System encodes feed items.
+3. System encodes Image items.
 4. System timestamps the new cache.
 5. System saves new cache data.
 6. System delivers success message.
