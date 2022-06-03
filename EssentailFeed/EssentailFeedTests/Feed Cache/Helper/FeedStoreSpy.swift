@@ -12,10 +12,11 @@ class FeedStoreSpy: FeedStore {
 
     typealias DeletionCompletion = (Error?) -> Void
     typealias InsertionCompletion = (Error?) -> Void
-
+    
     enum ReceivedMessage : Equatable {
         case deletCachedFeed
         case insert([LocalFeedImage], Date)
+        case retrievel
     }
     private(set) var receivedMessage  = [ReceivedMessage]()
     
@@ -46,5 +47,9 @@ class FeedStoreSpy: FeedStore {
     
     func completeInsetionSuccessfully(at index: Int = 0){
         insertionCompletions[index](nil)
+    }
+    
+    func retrieve(){
+        receivedMessage.append(.retrievel)
     }
 }
