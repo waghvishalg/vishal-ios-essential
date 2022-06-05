@@ -53,8 +53,13 @@ public final class LocalFeedLoader {
     }
     
     public func validateCache(){
-        store.retrieve{ _ in }
-        store.deletionCacheFeed{ _ in }
+        store.retrieve{ [unowned self] result in
+            switch result {
+            case .failure:
+                self.store.deletionCacheFeed{ _ in }
+            default : break
+            }
+        }
     }
     
     private var maxCacheAgeInDays: Int {
