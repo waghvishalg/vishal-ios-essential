@@ -95,13 +95,13 @@ class LoadFeedFromCacheUseCaseTests: XCTestCase {
         let lessThanSevenDaysOldTimeStamp = fixedCurrentDate.adding(days: -7).adding(seconds: 1)
         let (sut, store) = makeSUT(currentDate: { fixedCurrentDate })
         
-        sut.validateCache()
+        sut.load{ _ in }
         store.completeRetrieval(with: feed.local, timeStamp: lessThanSevenDaysOldTimeStamp)
         
         XCTAssertEqual(store.receivedMessage, [.retrieval])
     }
     
-    func test_load_deletesSevenDaysOldCache(){
+    func test_load_noSideEffectSevenDaysOldCache(){
         let feed = uniqueImageFeed()
         let fixedCurrentDate = Date()
         let sevenDaysOldTimeStamp = fixedCurrentDate.adding(days: -7)
@@ -110,10 +110,10 @@ class LoadFeedFromCacheUseCaseTests: XCTestCase {
         sut.load{ _ in }
         store.completeRetrieval(with: feed.local, timeStamp: sevenDaysOldTimeStamp)
         
-        XCTAssertEqual(store.receivedMessage, [.retrieval, .deletCachedFeed])
+        XCTAssertEqual(store.receivedMessage, [.retrieval])
     }
     
-    func test_load_deletesCacheMoreThanSevenDaysOldCache(){
+    func test_load_noSideEffectMoreThanSevenDaysOldCache(){
         let feed = uniqueImageFeed()
         let fixedCurrentDate = Date()
         let sevenDaysOldTimeStamp = fixedCurrentDate.adding(days: -7).adding(seconds: -1)
@@ -122,7 +122,7 @@ class LoadFeedFromCacheUseCaseTests: XCTestCase {
         sut.load{ _ in }
         store.completeRetrieval(with: feed.local, timeStamp: sevenDaysOldTimeStamp)
         
-        XCTAssertEqual(store.receivedMessage, [.retrieval, .deletCachedFeed])
+        XCTAssertEqual(store.receivedMessage, [.retrieval])
     }
     
     func test_load_doesNotDeliversResultAfterSUTInstanceHasBeenDeallocated(){
