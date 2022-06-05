@@ -37,7 +37,7 @@ class ValidateFeedCacheUseCaseTests: XCTestCase {
         // does not deletes cache on less than seven days old cache
         let feed = uniqueImageFeed()
         let fixedCurrentDate = Date()
-        let nonExpiredTimeStamp = fixedCurrentDate.adding(days: -7).adding(seconds: 1)
+        let nonExpiredTimeStamp = fixedCurrentDate.minusFeedCacheMaxAge().adding(seconds: 1)
         let (sut, store) = makeSUT(currentDate: { fixedCurrentDate })
         
         sut.load{ _ in }
@@ -50,7 +50,7 @@ class ValidateFeedCacheUseCaseTests: XCTestCase {
         // deletes seven days old cache
         let feed = uniqueImageFeed()
         let fixedCurrentDate = Date()
-        let expirationTimeStamp = fixedCurrentDate.adding(days: -7)
+        let expirationTimeStamp = fixedCurrentDate.minusFeedCacheMaxAge()
         let (sut, store) = makeSUT(currentDate: { fixedCurrentDate })
         
         sut.validateCache()
@@ -63,7 +63,7 @@ class ValidateFeedCacheUseCaseTests: XCTestCase {
         // deletes cache more than seven days old cache
         let feed = uniqueImageFeed()
         let fixedCurrentDate = Date()
-        let expiredTimeStamp = fixedCurrentDate.adding(days: -7).adding(seconds: -1)
+        let expiredTimeStamp = fixedCurrentDate.minusFeedCacheMaxAge().adding(seconds: -1)
         let (sut, store) = makeSUT(currentDate: { fixedCurrentDate })
         
         sut.validateCache()
