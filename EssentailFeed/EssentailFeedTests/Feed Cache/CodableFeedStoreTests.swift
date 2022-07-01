@@ -8,7 +8,7 @@
 import XCTest
 import EssentailFeed
 
-class CodableFeedStore {
+class CodableFeedStore: FeedStore {
     private struct Cache: Codable {
         let feed: [CodableFeedImage]
         let timestamp: Date
@@ -68,7 +68,7 @@ class CodableFeedStore {
         }
     }
     
-    func deleteCacheFeed(completion: @escaping FeedStore.DeletionCompletion) {
+    func deletionCacheFeed(completion: @escaping FeedStore.DeletionCompletion) {
         guard FileManager.default.fileExists(atPath: storeURL.path) else {
             return completion(nil)
         }
@@ -220,7 +220,7 @@ class CodableFeedStoreTests: XCTestCase {
         let exp = expectation(description: "Wait for cache deletion")
         var deletionError: Error?
         
-        sut.deleteCacheFeed { receivedDeletionError in
+        sut.deletionCacheFeed { receivedDeletionError in
             deletionError = receivedDeletionError
             exp.fulfill()
         }
