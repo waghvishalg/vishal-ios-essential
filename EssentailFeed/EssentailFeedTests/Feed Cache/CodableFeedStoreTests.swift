@@ -113,8 +113,17 @@ class CodableFeedStoreTests: XCTestCase {
     
     func test_delete_deliversErrorOnDeletionError() {
            
-        let noDeletePermissionURL = cachesDirectory()
-        let sut = makeSUT(storeURL: noDeletePermissionURL)
+        let sut = makeSUT(storeURL: noDeletePermissonURL())
+    
+        let deletionError = deleteCache(from: sut)
+        XCTAssertNotNil(deletionError, "Expected cache deletion to fail")
+        
+        expect(sut, toRetrieve: .empty)
+    }
+    
+    func test_delete_hasNoSideEffectOnDeletionError() {
+           
+        let sut = makeSUT(storeURL: noDeletePermissonURL())
     
         let deletionError = deleteCache(from: sut)
         XCTAssertNotNil(deletionError, "Expected cache deletion to fail")
@@ -161,7 +170,8 @@ class CodableFeedStoreTests: XCTestCase {
     private func insert(_ cache: (feed: [LocalFeedImage], timestamp: Date), to sut: FeedStore) -> Error? {
         let exp = expectation(description: "Wait for cache retrieval")
         var insertionError: Error?
-        sut.insert(cache.feed, timestamp: cache.timestamp) { insertionError in
+        sut.insert(cache.feed, timestamp: cache.timestamp) { receivedInsertionError in
+            insertionError = receivedInsertionError
             XCTAssertNil(insertionError,"Expected feed to be inserted successfully")
             exp.fulfill()
         }
@@ -195,9 +205,9 @@ class CodableFeedStoreTests: XCTestCase {
             case (.empty, .empty),
                 (.failure, .failure):
                 break
-            case let (.found(expected), .found(retrieved)) :
-                XCTAssertEqual(retrieved.feed, expected.feed, file: file, line: line)
-                XCTAssertEqual(retrieved.timestamp, expected.timestamp, file: file, line: line)
+            case let (.found(expectedFeed, expectedTimestamp), .found(retrievedFeed, retrievedTimestamp)) :
+                XCTAssertEqual(expectedFeed, retrievedFeed, file: file, line: line)
+                XCTAssertEqual(expectedTimestamp, retrievedTimestamp, file: file, line: line)
                 
             default:
                 XCTFail("Expected to retrieve \(expectedResult), got \(retrievedResult) insted", file: file, line: line)
@@ -214,6 +224,10 @@ class CodableFeedStoreTests: XCTestCase {
     
     private func cachesDirectory() -> URL {
         return FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first!
+    }
+    
+    private func noDeletePermissonURL() -> URL {
+        return FileManager.default.urls(for: .cachesDirectory, in: .systemDomainMask).first!
     }
     
     private func steupEmptyStoreState(){
