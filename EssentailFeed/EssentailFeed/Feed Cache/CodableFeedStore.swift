@@ -70,7 +70,7 @@ public class CodableFeedStore: FeedStore {
                 try encoded.write(to: storeURL)
                 completion(nil)
             } catch {
-                completion(nil)
+                completion(error)
             }
         }
     }
