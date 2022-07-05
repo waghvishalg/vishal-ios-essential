@@ -41,4 +41,4 @@ protocol FailableDeletFeedStoreSpecs: FeedStoreSpecs {
     func test_delete_hasNoSideEffectOnDeletionError()
 }
 
-typealias FailableFeedStore = FailableInsertFeedStoreSpecs & FailableInsertFeedStoreSpecs & FailableRetrieveFeedStoreSpecs
+typealias FailableFeedStore = FailableInsertFeedStoreSpecs & FailableDeletFeedStoreSpecs & FailableRetrieveFeedStoreSpecs
