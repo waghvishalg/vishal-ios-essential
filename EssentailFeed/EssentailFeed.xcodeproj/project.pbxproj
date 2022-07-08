@@ -257,6 +257,7 @@
 		AAF2730D2877FAA6006E8124 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				AA51BC4528745BCE0081E5AA /* CoreDataFeedStore.swift */,
 				AAF2730E2877FABA006E8124 /* CoreData */,
 			);
 			path = Infrastructure;
@@ -265,7 +266,6 @@
 		AAF2730E2877FABA006E8124 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				AA51BC4528745BCE0081E5AA /* CoreDataFeedStore.swift */,
 				AA51BC47287472560081E5AA /* FeedStore.xcdatamodeld */,
 			);
 			path = CoreData;
