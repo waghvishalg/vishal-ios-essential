@@ -42,6 +42,7 @@
 		AAA6D4C62847D34B00CD15C7 /* FeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA6D4C52847D34B00CD15C7 /* FeedStore.swift */; };
 		AAAFEF5B286F13B500BA095B /* CodableFeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAAFEF5A286F13B500BA095B /* CodableFeedStore.swift */; };
 		AAC4DAAE2831FB590085AF8C /* CacheFeedUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC4DAAD2831FB590085AF8C /* CacheFeedUseCaseTests.swift */; };
+		AAF273102877FD6C006E8124 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF2730F2877FD6C006E8124 /* CoreDataHelpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		AAA6D4C52847D34B00CD15C7 /* FeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStore.swift; sourceTree = "<group>"; };
 		AAAFEF5A286F13B500BA095B /* CodableFeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableFeedStore.swift; sourceTree = "<group>"; };
 		AAC4DAAD2831FB590085AF8C /* CacheFeedUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheFeedUseCaseTests.swift; sourceTree = "<group>"; };
+		AAF2730F2877FD6C006E8124 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +268,7 @@
 		AAF2730E2877FABA006E8124 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				AAF2730F2877FD6C006E8124 /* CoreDataHelpers.swift */,
 				AA51BC47287472560081E5AA /* FeedStore.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -419,6 +422,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAF273102877FD6C006E8124 /* CoreDataHelpers.swift in Sources */,
 				8C64666B280F3012003379DB /* FeedItemsMapper.swift in Sources */,
 				8CD3455C2807066C0039B532 /* FeedLoader.swift in Sources */,
 				AA2B276828485BC80005B2FF /* RemoteFeedItem.swift in Sources */,
