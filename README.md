@@ -3,6 +3,8 @@ Essentials Lectures case study
 
 [![Build Status](https://app.travis-ci.com/waghvishalg/vishal-ios-essential.svg?branch=main)](https://app.travis-ci.com/waghvishalg/vishal-ios-essential)
 
+[![Build Status](https://app.travis-ci.com/waghvishalg/vishal-ios-essential.svg?branch=masterCI)](https://app.travis-ci.com/waghvishalg/vishal-ios-essential)
+
 ## Image Feed Feature Specs
 
 ### Story: Customer requests to see their image feed
