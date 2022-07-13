@@ -89,7 +89,7 @@ class EssentailFeedCacheIntegrationTests: XCTestCase {
             XCTAssertNil(saveError, "Expected to save feed successfully", file: file, line:  line)
             saveExp.fulfill()
         }
-        wait(for: [saveExp], timeout: 1.0
+        wait(for: [saveExp], timeout: 1.0)
     }
     
     private func setupEmptyStoreState() {
