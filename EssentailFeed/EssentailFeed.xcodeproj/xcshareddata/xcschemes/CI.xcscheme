@@ -61,6 +61,17 @@
                ReferencedContainer = "container:EssentailFeed.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            testExecutionOrdering = "random">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AA8F09B5287E7F5400CE33D8"
+               BuildableName = "EssentailFeedCacheIntegrationTests.xctest"
+               BlueprintName = "EssentailFeedCacheIntegrationTests"
+               ReferencedContainer = "container:EssentailFeed.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
