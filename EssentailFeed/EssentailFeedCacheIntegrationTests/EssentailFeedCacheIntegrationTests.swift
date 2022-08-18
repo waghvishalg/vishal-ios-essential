@@ -33,12 +33,7 @@ class EssentailFeedCacheIntegrationTests: XCTestCase {
         let sutToPerformLoad = makeSUT()
         let feed = uniqueImageFeed().modules
         
-        let saveExp = expectation(description: "wait for load completion")
-        sutToPerformSave.save(feed) { saveError in
-            XCTAssertNil(saveError, "Expected to save feed successfully")
-            saveExp.fulfill()
-        }
-        wait(for: [saveExp], timeout: 1.0)
+        save(feed, with: sutToPerformSave)
         
         expect(sutToPerformLoad, toLoad: feed)
     }
@@ -85,8 +80,10 @@ class EssentailFeedCacheIntegrationTests: XCTestCase {
     
     private func save(_ feed: [FeedImage], with loader: LocalFeedLoader, file: StaticString = #file, line: UInt = #line) {
         let saveExp = expectation(description: "wait for load completion")
-        loader.save(feed) { saveError in
-            XCTAssertNil(saveError, "Expected to save feed successfully", file: file, line:  line)
+        loader.save(feed) { result in
+            if case let Result.failure(error) = result {
+                XCTAssertNil(error, "Expected to save feed successfully", file: file, line: line)
+            }
             saveExp.fulfill()
         }
         wait(for: [saveExp], timeout: 1.0)
