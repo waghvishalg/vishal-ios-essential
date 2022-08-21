@@ -1,13 +1,13 @@
 //
-//  FeedItem.swift
+//  LocalFeedItem.swift
 //  EssentailFeed
 //
-//  Created by Wagh, Vishal on 13/04/22.
+//  Created by Vishal Wagh on 02/06/22.
 //
 
 import Foundation
 
-public struct FeedImage: Equatable{
+public struct LocalFeedImage: Equatable {
     public let id: UUID
     public let description: String?
     public let location: String?

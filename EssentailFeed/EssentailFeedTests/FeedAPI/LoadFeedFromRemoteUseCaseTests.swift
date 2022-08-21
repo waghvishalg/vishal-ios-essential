@@ -8,7 +8,7 @@
 import XCTest
 import EssentailFeed
 
-class RemoteFeedLoaderTests: XCTestCase {
+class LoadFeedFromRemoteUseCaseTests: XCTestCase {
     
    
     func test_init_doesNotRequestDataFromURL(){
@@ -80,13 +80,13 @@ class RemoteFeedLoaderTests: XCTestCase {
         
         let item1 = makeItem(
             id: UUID(),
-            imageURL: URL(string: "http://a-url.com")!)
+            url: URL(string: "http://a-url.com")!)
         
         let item2 = makeItem(
             id: UUID(),
             description: "a description",
             location: "a location",
-            imageURL: URL(string: "http://another-url.com")!)
+            url: URL(string: "http://another-url.com")!)
         
         let items = [item1.model, item2.model]
         expect(sut, toCompleteWith: .success(items), when: {
@@ -125,18 +125,17 @@ class RemoteFeedLoaderTests: XCTestCase {
         return .failure(error)
     }
     
-    private func makeItem(id: UUID, description: String? = nil, location: String? = nil, imageURL: URL ) ->  (model: FeedItem, Json: [String: Any]) {
+    private func makeItem(id: UUID, description: String? = nil, location: String? = nil, url: URL ) ->  (model: FeedImage, Json: [String: Any]) {
             
-        let item = FeedItem(id: id, description: description, location: location, imageURL: imageURL)
+        let item = FeedImage(id: id, description: description, location: location, url: url)
         
         let json = [
             "id": id.uuidString,
             "description": description,
             "location": location,
-            "image": imageURL.absoluteString
-        ].reduce(into:[String: Any]()) { (acc, e) in
-            if let value = e.value { acc[e.key] = value }
-        }
+            "image": url.absoluteString
+        ].compactMapValues { $0 }
+        
         return (item, json)
     }
     
@@ -165,13 +164,13 @@ class RemoteFeedLoaderTests: XCTestCase {
     }
     
     private class HTTPClientSpy: HTTPClient {
-        var messages = [(url: URL, completion: (HTTPClientResult) -> Void)]()
+        var messages = [(url: URL, completion: (HTTPClient.Result) -> Void)]()
         
         var requestURLs : [URL] {
             return messages.map { $0.url }
         }
 
-        func get(from url: URL, completion: @escaping (HTTPClientResult) -> Void) {
+        func get(from url: URL, completion: @escaping (HTTPClient.Result) -> Void) {
             messages.append((url,completion))
         }
         
@@ -187,7 +186,7 @@ class RemoteFeedLoaderTests: XCTestCase {
                 headerFields: nil
             )!
             
-            messages[index].completion(.success(data, response))
+            messages[index].completion(.success((data, response)))
         }
     }
 

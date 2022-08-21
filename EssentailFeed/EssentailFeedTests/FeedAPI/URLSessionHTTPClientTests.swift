@@ -63,7 +63,7 @@ class URLSessionHTTPClientTests: XCTestCase {
         let exp = expectation(description: "wait for request")
         makeSUT().get(from: anyURL()) { result in
             switch result {
-            case let .success(receivedData, receivedResponse):
+            case let .success((receivedData, receivedResponse)):
                 XCTAssertEqual(receivedData, data)
                 XCTAssertEqual(receivedResponse.url, response.url)
                 XCTAssertEqual(receivedResponse.statusCode, response.statusCode)
@@ -113,7 +113,7 @@ class URLSessionHTTPClientTests: XCTestCase {
         
         let result = resultFor(data: data, response: response, error: error)
         switch result {
-        case let .success(data, response):
+        case let .success((data, response)):
             return (data,response)
         default :
             XCTFail("Expected failure, got \(result) instead",file: file, line: line)
@@ -121,13 +121,13 @@ class URLSessionHTTPClientTests: XCTestCase {
         }
     }
     
-    private func resultFor(data: Data?, response: URLResponse?, error: Error?,file: StaticString = #filePath, line: UInt = #line) -> HTTPClientResult {
+    private func resultFor(data: Data?, response: URLResponse?, error: Error?,file: StaticString = #filePath, line: UInt = #line) -> HTTPClient.Result {
         
         URLProtocolStub.stub(data: data, response: response, error: error)
         let sut = makeSUT(file: file, line: line)
         let exp = expectation(description: "Wait for completion")
         
-        var receivedResult: HTTPClientResult!
+        var receivedResult: HTTPClient.Result!
         sut.get(from: anyURL()) { result in
             receivedResult = result
             exp.fulfill()
@@ -184,7 +184,6 @@ class URLSessionHTTPClientTests: XCTestCase {
             requestObserver = observer
         }
         override class func canInit(with request: URLRequest) -> Bool {
-            requestObserver?(request)
             return true
         }
         
@@ -193,6 +192,11 @@ class URLSessionHTTPClientTests: XCTestCase {
         }
         
         override func startLoading() {
+            
+            if let requestObserver = URLProtocolStub.requestObserver {
+                client?.urlProtocolDidFinishLoading(self)
+                return requestObserver(request)
+            }
             
             if let data = URLProtocolStub.stub?.data {
                 client?.urlProtocol(self, didLoad: data)
