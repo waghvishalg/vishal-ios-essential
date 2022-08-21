@@ -17,7 +17,7 @@
 		<key>EssentailFeedAPIEndToEndTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>3</integer>
 		</dict>
 		<key>EssentailFeedCacheIntegrationTests.xcscheme_^#shared#^_</key>
 		<dict>
@@ -27,6 +27,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>8CA499EE2815152300EA3C36</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>8CD34540280701910039B532</key>
 		<dict>
 			<key>primary</key>
