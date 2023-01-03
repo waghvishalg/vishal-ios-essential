@@ -22,6 +22,7 @@
 		8CD3455C2807066C0039B532 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD3455B2807066C0039B532 /* FeedLoader.swift */; };
 		AA0C4C3C28741AD4001F2C4C /* XCTestCase+FailableDeletFeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0C4C3B28741AD4001F2C4C /* XCTestCase+FailableDeletFeedStoreSpecs.swift */; };
 		AA1C4107284C816E006DDB5B /* FeedCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1C4106284C816E006DDB5B /* FeedCachePolicy.swift */; };
+		AA1F2AC42963C99A004CB53C /* FeedViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1F2AC22963C99A004CB53C /* FeedViewControllerTest.swift */; };
 		AA2B276828485BC80005B2FF /* RemoteFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2B276728485BC80005B2FF /* RemoteFeedItem.swift */; };
 		AA2B276A28485C180005B2FF /* LocalFeedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2B276928485C180005B2FF /* LocalFeedImage.swift */; };
 		AA365F022826ECAC0096A50D /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA88C9928141189003B746C /* XCTestCase+MemoryLeakTracking.swift */; };
@@ -100,6 +101,8 @@
 		8CD3455B2807066C0039B532 /* FeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoader.swift; sourceTree = "<group>"; };
 		AA0C4C3B28741AD4001F2C4C /* XCTestCase+FailableDeletFeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FailableDeletFeedStoreSpecs.swift"; sourceTree = "<group>"; };
 		AA1C4106284C816E006DDB5B /* FeedCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCachePolicy.swift; sourceTree = "<group>"; };
+		AA1F2AC22963C99A004CB53C /* FeedViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewControllerTest.swift; sourceTree = "<group>"; };
+		AA1F2AC32963C99A004CB53C /* EssentailFeediOSTests-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EssentailFeediOSTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		AA2B276728485BC80005B2FF /* RemoteFeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedItem.swift; sourceTree = "<group>"; };
 		AA2B276928485C180005B2FF /* LocalFeedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedImage.swift; sourceTree = "<group>"; };
 		AA51BC43287459E70081E5AA /* CoreDataFeedStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFeedStoreTests.swift; sourceTree = "<group>"; };
@@ -282,6 +285,8 @@
 		AA75750128B2328C00363C35 /* EssentailFeediOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				AA1F2AC32963C99A004CB53C /* EssentailFeediOSTests-Bridging-Header.h */,
+				AA1F2AC22963C99A004CB53C /* FeedViewControllerTest.swift */,
 			);
 			path = EssentailFeediOSTests;
 			sourceTree = "<group>";
@@ -506,6 +511,7 @@
 					};
 					AA7574FC28B2328C00363C35 = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1400;
 					};
 					AA8F09B5287E7F5400CE33D8 = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -647,6 +653,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA1F2AC42963C99A004CB53C /* FeedViewControllerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1009,16 +1016,24 @@
 		AA75750928B2328C00363C35 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9P58HZ7L2Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Vishal-Wagh.EssentailFeediOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "EssentailFeediOSTests/EssentailFeediOSTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1027,16 +1042,23 @@
 		AA75750A28B2328C00363C35 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9P58HZ7L2Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Vishal-Wagh.EssentailFeediOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "EssentailFeediOSTests/EssentailFeediOSTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
