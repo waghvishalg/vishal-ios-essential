@@ -32,6 +32,7 @@
 		AA51BC49287472560081E5AA /* FeedStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA51BC47287472560081E5AA /* FeedStore.xcdatamodeld */; };
 		AA7574F828B2328C00363C35 /* EssentailFeediOS.docc in Sources */ = {isa = PBXBuildFile; fileRef = AA7574F728B2328C00363C35 /* EssentailFeediOS.docc */; };
 		AA7574FE28B2328C00363C35 /* EssentailFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7574F428B2328C00363C35 /* EssentailFeediOS.framework */; };
+		AA77675F296CE00000EB16EB /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA88C9928141189003B746C /* XCTestCase+MemoryLeakTracking.swift */; };
 		AA86D3B22849A82E00DDC76A /* LoadFeedFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA86D3B12849A82E00DDC76A /* LoadFeedFromCacheUseCaseTests.swift */; };
 		AA86D3B52849A9C600DDC76A /* FeedStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA86D3B42849A9C600DDC76A /* FeedStoreSpy.swift */; };
 		AA8F09B9287E7F5400CE33D8 /* EssentailFeedCacheIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F09B8287E7F5400CE33D8 /* EssentailFeedCacheIntegrationTests.swift */; };
@@ -688,6 +689,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA1F2AC42963C99A004CB53C /* FeedViewControllerTest.swift in Sources */,
+				AA77675F296CE00000EB16EB /* XCTestCase+MemoryLeakTracking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
