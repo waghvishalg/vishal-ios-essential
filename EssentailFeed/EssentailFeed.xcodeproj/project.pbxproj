@@ -33,6 +33,7 @@
 		AA7574F828B2328C00363C35 /* EssentailFeediOS.docc in Sources */ = {isa = PBXBuildFile; fileRef = AA7574F728B2328C00363C35 /* EssentailFeediOS.docc */; };
 		AA7574FE28B2328C00363C35 /* EssentailFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7574F428B2328C00363C35 /* EssentailFeediOS.framework */; };
 		AA77675F296CE00000EB16EB /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA88C9928141189003B746C /* XCTestCase+MemoryLeakTracking.swift */; };
+		AA776761296CF47200EB16EB /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA776760296CF47200EB16EB /* FeedViewController.swift */; };
 		AA86D3B22849A82E00DDC76A /* LoadFeedFromCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA86D3B12849A82E00DDC76A /* LoadFeedFromCacheUseCaseTests.swift */; };
 		AA86D3B52849A9C600DDC76A /* FeedStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA86D3B42849A9C600DDC76A /* FeedStoreSpy.swift */; };
 		AA8F09B9287E7F5400CE33D8 /* EssentailFeedCacheIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F09B8287E7F5400CE33D8 /* EssentailFeedCacheIntegrationTests.swift */; };
@@ -134,6 +135,7 @@
 		AA7574F428B2328C00363C35 /* EssentailFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentailFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7574F728B2328C00363C35 /* EssentailFeediOS.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = EssentailFeediOS.docc; sourceTree = "<group>"; };
 		AA7574FD28B2328C00363C35 /* EssentailFeediOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentailFeediOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA776760296CF47200EB16EB /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		AA86D3B12849A82E00DDC76A /* LoadFeedFromCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedFromCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		AA86D3B42849A9C600DDC76A /* FeedStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStoreSpy.swift; sourceTree = "<group>"; };
 		AA8F09B6287E7F5400CE33D8 /* EssentailFeedCacheIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentailFeedCacheIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -311,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				AA7574F728B2328C00363C35 /* EssentailFeediOS.docc */,
+				AA776760296CF47200EB16EB /* FeedViewController.swift */,
 			);
 			path = EssentailFeediOS;
 			sourceTree = "<group>";
@@ -680,6 +683,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA776761296CF47200EB16EB /* FeedViewController.swift in Sources */,
 				AA7574F828B2328C00363C35 /* EssentailFeediOS.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1007,7 +1011,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1037,7 +1041,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1058,12 +1062,13 @@
 		AA75750928B2328C00363C35 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9P58HZ7L2Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1084,12 +1089,13 @@
 		AA75750A28B2328C00363C35 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 9P58HZ7L2Y;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
