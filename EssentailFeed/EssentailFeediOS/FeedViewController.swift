@@ -10,7 +10,8 @@ import UIKit
 import EssentailFeed
 
 final public class FeedViewController: UITableViewController {
-    public var loader: FeedLoader?
+    private var loader: FeedLoader?
+    private var tableModel = [FeedImage]()
     
     public convenience init(loader: FeedLoader) {
         self.init()
@@ -27,9 +28,23 @@ final public class FeedViewController: UITableViewController {
     
     @objc private func load() {
         refreshControl?.beginRefreshing()
-        loader?.load { [weak self] _ in
+        loader?.load { [weak self] result in
+            self?.tableModel = (try? result.get()) ?? []
+            self?.tableView.reloadData()
             self?.refreshControl?.endRefreshing()
         }
     }
     
+    public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tableModel.count
+    }
+    
+    public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellModel = tableModel[indexPath.row]
+        let cell = FeedImageCell()
+        cell.locationContainer.isHidden = (cellModel.location == nil)
+        cell.locationLable.text = cellModel.location
+        cell.descriptionLable.text = cellModel.description
+        return cell
+    }
 }

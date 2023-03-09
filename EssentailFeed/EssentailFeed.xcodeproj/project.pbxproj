@@ -30,6 +30,7 @@
 		AA365F022826ECAC0096A50D /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA88C9928141189003B746C /* XCTestCase+MemoryLeakTracking.swift */; };
 		AA51BC44287459E70081E5AA /* CoreDataFeedStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA51BC43287459E70081E5AA /* CoreDataFeedStoreTests.swift */; };
 		AA51BC49287472560081E5AA /* FeedStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA51BC47287472560081E5AA /* FeedStore.xcdatamodeld */; };
+		AA66C52829B9ECD200A8D05D /* FeedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA66C52729B9ECD200A8D05D /* FeedImageCell.swift */; };
 		AA7574F828B2328C00363C35 /* EssentailFeediOS.docc in Sources */ = {isa = PBXBuildFile; fileRef = AA7574F728B2328C00363C35 /* EssentailFeediOS.docc */; };
 		AA7574FE28B2328C00363C35 /* EssentailFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA7574F428B2328C00363C35 /* EssentailFeediOS.framework */; };
 		AA77675F296CE00000EB16EB /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA88C9928141189003B746C /* XCTestCase+MemoryLeakTracking.swift */; };
@@ -132,6 +133,7 @@
 		AA2B276928485C180005B2FF /* LocalFeedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedImage.swift; sourceTree = "<group>"; };
 		AA51BC43287459E70081E5AA /* CoreDataFeedStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataFeedStoreTests.swift; sourceTree = "<group>"; };
 		AA51BC48287472560081E5AA /* FeedStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FeedStore.xcdatamodel; sourceTree = "<group>"; };
+		AA66C52729B9ECD200A8D05D /* FeedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCell.swift; sourceTree = "<group>"; };
 		AA7574F428B2328C00363C35 /* EssentailFeediOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentailFeediOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7574F728B2328C00363C35 /* EssentailFeediOS.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = EssentailFeediOS.docc; sourceTree = "<group>"; };
 		AA7574FD28B2328C00363C35 /* EssentailFeediOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentailFeediOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -314,6 +316,7 @@
 			children = (
 				AA7574F728B2328C00363C35 /* EssentailFeediOS.docc */,
 				AA776760296CF47200EB16EB /* FeedViewController.swift */,
+				AA66C52729B9ECD200A8D05D /* FeedImageCell.swift */,
 			);
 			path = EssentailFeediOS;
 			sourceTree = "<group>";
@@ -684,6 +687,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA776761296CF47200EB16EB /* FeedViewController.swift in Sources */,
+				AA66C52829B9ECD200A8D05D /* FeedImageCell.swift in Sources */,
 				AA7574F828B2328C00363C35 /* EssentailFeediOS.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
