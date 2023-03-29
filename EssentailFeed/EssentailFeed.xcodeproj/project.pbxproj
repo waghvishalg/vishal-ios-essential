@@ -345,8 +345,8 @@
 		AA494EEE29D4658500DEB181 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AA494EEF29D465AB00DEB181 /* FeedRefreshViewController.swift */,
 				AA776760296CF47200EB16EB /* FeedViewController.swift */,
+				AA494EEF29D465AB00DEB181 /* FeedRefreshViewController.swift */,
 				AA494EF129D471F500DEB181 /* FeedImageCellController.swift */,
 			);
 			path = Controllers;
