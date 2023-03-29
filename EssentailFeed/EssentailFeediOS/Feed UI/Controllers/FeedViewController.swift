@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import EssentailFeed
 
 public protocol FeedImageDataLoaderTask {
     func cancel()
@@ -51,7 +50,7 @@ final public class FeedViewController: UITableViewController, UITableViewDataSou
     
     public func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         indexPaths.forEach { indexPath in
-            cellController(forRowAt: indexPath).preLoad()
+            cellController(forRowAt: indexPath).preload()
         }
     }
     
