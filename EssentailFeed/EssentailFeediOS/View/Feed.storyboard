@@ -127,6 +127,7 @@
                         <connections>
                             <outlet property="dataSource" destination="NNj-tM-FFE" id="WBu-G0-1Nv"/>
                             <outlet property="delegate" destination="NNj-tM-FFE" id="cwh-dq-074"/>
+                            <outlet property="prefetchDataSource" destination="NNj-tM-FFE" id="pGA-3e-ApH"/>
                         </connections>
                     </tableView>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Bcb-wh-5Dl">
