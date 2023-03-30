@@ -132,15 +132,26 @@
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Bcb-wh-5Dl">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <action selector="refresh" destination="bTg-LZ-vPR" eventType="valueChanged" id="RqD-Zo-B4C"/>
+                        </connections>
                     </refreshControl>
+                    <connections>
+                        <outlet property="refreshController" destination="bTg-LZ-vPR" id="IQS-Ni-1Dt"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tlY-3n-kYM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="bTg-LZ-vPR" customClass="FeedRefreshViewController" customModule="EssentailFeediOS" customModuleProvider="target">
+                    <connections>
+                        <outlet property="view" destination="Bcb-wh-5Dl" id="otl-LU-r0P"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="921.73913043478262" y="-67.633928571428569"/>
         </scene>
     </scenes>
     <resources>
-        <image name="pin" width="10" height="14"/>
+        <image name="pin" width="10" height="14.333333015441895"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
