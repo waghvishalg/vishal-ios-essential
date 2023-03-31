@@ -186,6 +186,8 @@
 		AA98966A29D689DA001C84B1 /* UIImage+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+TestHelpers.swift"; sourceTree = "<group>"; };
 		AA98966D29D68DEB001C84B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Feed.strings; sourceTree = "<group>"; };
 		AA98966F29D68E49001C84B1 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Feed.strings"; sourceTree = "<group>"; };
+		AA98967029D68ED1001C84B1 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Feed.strings; sourceTree = "<group>"; };
+		AA98967129D68EE1001C84B1 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Feed.strings; sourceTree = "<group>"; };
 		AAA0E32A284C3BA70091BCFF /* ValidateFeedCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateFeedCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		AAA0E32C284C4E460091BCFF /* FeedCacheTestHelperFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCacheTestHelperFile.swift; sourceTree = "<group>"; };
 		AAA0E32E284C4FE00091BCFF /* SharedTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelper.swift; sourceTree = "<group>"; };
@@ -698,6 +700,8 @@
 				en,
 				Base,
 				"pt-BR",
+				el,
+				hi,
 			);
 			mainGroup = 8CD34537280701910039B532;
 			productRefGroup = 8CD34542280701910039B532 /* Products */;
@@ -903,6 +907,8 @@
 			children = (
 				AA98966D29D68DEB001C84B1 /* en */,
 				AA98966F29D68E49001C84B1 /* pt-BR */,
+				AA98967029D68ED1001C84B1 /* el */,
+				AA98967129D68EE1001C84B1 /* hi */,
 			);
 			name = Feed.strings;
 			sourceTree = "<group>";
