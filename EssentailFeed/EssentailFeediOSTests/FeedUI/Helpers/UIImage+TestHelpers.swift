@@ -1,8 +1,8 @@
 //
 //  UIImage+TestHelpers.swift
-//  EssentailFeediOS
+//  EssentailFeediOSTests
 //
-//  Created by Vishal Wagh on 29/03/23.
+//  Created by Vishal Wagh on 31/03/23.
 //
 
 import UIKit
