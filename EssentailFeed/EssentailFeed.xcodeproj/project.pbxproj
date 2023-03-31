@@ -53,7 +53,6 @@
 		AA8F876C2873D2DE0086BE39 /* XCTestCase+FeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F876B2873D2DE0086BE39 /* XCTestCase+FeedStoreSpecs.swift */; };
 		AA8F876E2873DA270086BE39 /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F876D2873DA270086BE39 /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift */; };
 		AA8F87702873DA9F0086BE39 /* XCTestCase+FailableInsertFeedStoreSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8F876F2873DA9F0086BE39 /* XCTestCase+FailableInsertFeedStoreSpecs.swift */; };
-		AA98965729D683D0001C84B1 /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA98965629D683D0001C84B1 /* Feed.strings */; };
 		AA98965929D687B2001C84B1 /* FeedViewControllerTest+localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA98965829D687B2001C84B1 /* FeedViewControllerTest+localization.swift */; };
 		AA98965D29D68914001C84B1 /* FeedViewController+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA98965C29D68914001C84B1 /* FeedViewController+TestHelpers.swift */; };
 		AA98965F29D68933001C84B1 /* FeedUIIntegrationTests+Assertions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA98965E29D68933001C84B1 /* FeedUIIntegrationTests+Assertions.swift */; };
@@ -63,6 +62,7 @@
 		AA98966729D689AC001C84B1 /* UIControl+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA98966629D689AC001C84B1 /* UIControl+TestHelpers.swift */; };
 		AA98966929D689C8001C84B1 /* UIRefreshControl+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA98966829D689C8001C84B1 /* UIRefreshControl+TestHelpers.swift */; };
 		AA98966B29D689DA001C84B1 /* UIImage+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA98966A29D689DA001C84B1 /* UIImage+TestHelpers.swift */; };
+		AA98966C29D68DEB001C84B1 /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA98966E29D68DEB001C84B1 /* Feed.strings */; };
 		AAA0E32B284C3BA70091BCFF /* ValidateFeedCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA0E32A284C3BA70091BCFF /* ValidateFeedCacheUseCaseTests.swift */; };
 		AAA0E32D284C4E460091BCFF /* FeedCacheTestHelperFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA0E32C284C4E460091BCFF /* FeedCacheTestHelperFile.swift */; };
 		AAA0E32F284C4FE00091BCFF /* SharedTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA0E32E284C4FE00091BCFF /* SharedTestHelper.swift */; };
@@ -175,7 +175,6 @@
 		AA8F876B2873D2DE0086BE39 /* XCTestCase+FeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FeedStoreSpecs.swift"; sourceTree = "<group>"; };
 		AA8F876D2873DA270086BE39 /* XCTestCase+FailableRetrieveFeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FailableRetrieveFeedStoreSpecs.swift"; sourceTree = "<group>"; };
 		AA8F876F2873DA9F0086BE39 /* XCTestCase+FailableInsertFeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FailableInsertFeedStoreSpecs.swift"; sourceTree = "<group>"; };
-		AA98965629D683D0001C84B1 /* Feed.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Feed.strings; sourceTree = "<group>"; };
 		AA98965829D687B2001C84B1 /* FeedViewControllerTest+localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewControllerTest+localization.swift"; sourceTree = "<group>"; };
 		AA98965C29D68914001C84B1 /* FeedViewController+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewController+TestHelpers.swift"; sourceTree = "<group>"; };
 		AA98965E29D68933001C84B1 /* FeedUIIntegrationTests+Assertions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedUIIntegrationTests+Assertions.swift"; sourceTree = "<group>"; };
@@ -185,6 +184,7 @@
 		AA98966629D689AC001C84B1 /* UIControl+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+TestHelpers.swift"; sourceTree = "<group>"; };
 		AA98966829D689C8001C84B1 /* UIRefreshControl+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIRefreshControl+TestHelpers.swift"; sourceTree = "<group>"; };
 		AA98966A29D689DA001C84B1 /* UIImage+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+TestHelpers.swift"; sourceTree = "<group>"; };
+		AA98966D29D68DEB001C84B1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Feed.strings; sourceTree = "<group>"; };
 		AAA0E32A284C3BA70091BCFF /* ValidateFeedCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateFeedCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		AAA0E32C284C4E460091BCFF /* FeedCacheTestHelperFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCacheTestHelperFile.swift; sourceTree = "<group>"; };
 		AAA0E32E284C4FE00091BCFF /* SharedTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelper.swift; sourceTree = "<group>"; };
@@ -398,7 +398,7 @@
 				AABFDBFC29D57B8F00CE9B51 /* FeedLoadingViewModel.swift */,
 				AABFDBF829D57AF700CE9B51 /* FeedImagePresenter.swift */,
 				AA494EF929D4A4FD00DEB181 /* FeedImageViewModel.swift */,
-				AA98965629D683D0001C84B1 /* Feed.strings */,
+				AA98966E29D68DEB001C84B1 /* Feed.strings */,
 			);
 			path = "Feed Presentation";
 			sourceTree = "<group>";
@@ -740,7 +740,7 @@
 			files = (
 				AABFDBFF29D58EF500CE9B51 /* Feed.storyboard in Resources */,
 				AABFDC0129D58FD300CE9B51 /* Feed.xcassets in Resources */,
-				AA98965729D683D0001C84B1 /* Feed.strings in Resources */,
+				AA98966C29D68DEB001C84B1 /* Feed.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -894,6 +894,17 @@
 			targetProxy = AA8F09BB287E7F5400CE33D8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AA98966E29D68DEB001C84B1 /* Feed.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA98966D29D68DEB001C84B1 /* en */,
+			);
+			name = Feed.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8CA499F62815152300EA3C36 /* Debug */ = {
