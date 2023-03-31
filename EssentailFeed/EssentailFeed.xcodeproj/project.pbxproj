@@ -63,6 +63,7 @@
 		AA98966929D689C8001C84B1 /* UIRefreshControl+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA98966829D689C8001C84B1 /* UIRefreshControl+TestHelpers.swift */; };
 		AA98966B29D689DA001C84B1 /* UIImage+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA98966A29D689DA001C84B1 /* UIImage+TestHelpers.swift */; };
 		AA98966C29D68DEB001C84B1 /* Feed.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA98966E29D68DEB001C84B1 /* Feed.strings */; };
+		AA98967429D6901C001C84B1 /* FeedLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA98967329D6901C001C84B1 /* FeedLocalizationTests.swift */; };
 		AAA0E32B284C3BA70091BCFF /* ValidateFeedCacheUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA0E32A284C3BA70091BCFF /* ValidateFeedCacheUseCaseTests.swift */; };
 		AAA0E32D284C4E460091BCFF /* FeedCacheTestHelperFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA0E32C284C4E460091BCFF /* FeedCacheTestHelperFile.swift */; };
 		AAA0E32F284C4FE00091BCFF /* SharedTestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAA0E32E284C4FE00091BCFF /* SharedTestHelper.swift */; };
@@ -188,6 +189,7 @@
 		AA98966F29D68E49001C84B1 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Feed.strings"; sourceTree = "<group>"; };
 		AA98967029D68ED1001C84B1 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Feed.strings; sourceTree = "<group>"; };
 		AA98967129D68EE1001C84B1 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Feed.strings; sourceTree = "<group>"; };
+		AA98967329D6901C001C84B1 /* FeedLocalizationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLocalizationTests.swift; sourceTree = "<group>"; };
 		AAA0E32A284C3BA70091BCFF /* ValidateFeedCacheUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateFeedCacheUseCaseTests.swift; sourceTree = "<group>"; };
 		AAA0E32C284C4E460091BCFF /* FeedCacheTestHelperFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCacheTestHelperFile.swift; sourceTree = "<group>"; };
 		AAA0E32E284C4FE00091BCFF /* SharedTestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelper.swift; sourceTree = "<group>"; };
@@ -432,9 +434,9 @@
 		AA75750128B2328C00363C35 /* EssentailFeediOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				AA98967229D69006001C84B1 /* Feed Presentation */,
 				AA98965A29D6889C001C84B1 /* FeedUI */,
 				AA1F2AC32963C99A004CB53C /* EssentailFeediOSTests-Bridging-Header.h */,
-				AA1F2AC22963C99A004CB53C /* FeedUIIntegrationTest.swift */,
 			);
 			path = EssentailFeediOSTests;
 			sourceTree = "<group>";
@@ -460,6 +462,7 @@
 			isa = PBXGroup;
 			children = (
 				AA98965B29D688B9001C84B1 /* Helpers */,
+				AA1F2AC22963C99A004CB53C /* FeedUIIntegrationTest.swift */,
 			);
 			path = FeedUI;
 			sourceTree = "<group>";
@@ -478,6 +481,14 @@
 				AA98966829D689C8001C84B1 /* UIRefreshControl+TestHelpers.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AA98967229D69006001C84B1 /* Feed Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				AA98967329D6901C001C84B1 /* FeedLocalizationTests.swift */,
+			);
+			path = "Feed Presentation";
 			sourceTree = "<group>";
 		};
 		AAA6D4C22847D14200CD15C7 /* Feed Cache */ = {
@@ -847,6 +858,7 @@
 			files = (
 				AA98966929D689C8001C84B1 /* UIRefreshControl+TestHelpers.swift in Sources */,
 				AA98966129D6894A001C84B1 /* FeedUIIntegrationTests+LoaderSpy.swift in Sources */,
+				AA98967429D6901C001C84B1 /* FeedLocalizationTests.swift in Sources */,
 				AA1F2AC42963C99A004CB53C /* FeedUIIntegrationTest.swift in Sources */,
 				AA98965F29D68933001C84B1 /* FeedUIIntegrationTests+Assertions.swift in Sources */,
 				AA98966729D689AC001C84B1 /* UIControl+TestHelpers.swift in Sources */,
