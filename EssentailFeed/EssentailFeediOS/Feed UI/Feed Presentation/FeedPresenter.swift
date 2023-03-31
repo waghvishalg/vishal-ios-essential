@@ -5,6 +5,7 @@
 //  Created by Vishal Wagh on 30/03/23.
 //
 
+import Foundation
 import EssentailFeed
 
 protocol FeedLoadingView {
@@ -25,7 +26,10 @@ final class FeedPresenter {
     }
 
     static var title: String {
-        return "My Feed"
+        return NSLocalizedString("FEED_VIEW_TITLE",
+            tableName: "Feed",
+            bundle: Bundle(for: FeedPresenter.self),
+            comment: "Title for feed view")
     }
     
     func didStartLoadingFeed() {
