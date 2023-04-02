@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import EssentailFeediOS
+import EssentailFeed
 
 final class FeedLocalizationTests: XCTestCase {
     
