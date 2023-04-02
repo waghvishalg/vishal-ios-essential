@@ -7,3 +7,4 @@
 */
 
 "FEED_VIEW_TITLE" = "मेरी सूची";
+"FEED_VIEW_CONNECTIONS_ERROR" = "सर्वर से कनेक्ट नहीं हो सका";
