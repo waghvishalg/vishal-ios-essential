@@ -13,8 +13,7 @@ final class FeedPresenter {
     }
 }
 
-
-class FeedPresenterTests: XCTest {
+class FeedPresenterTests: XCTestCase {
     
     func test_init_doesNotSendMessagesToView() {
         let view = ViewSpy()
@@ -25,6 +24,16 @@ class FeedPresenterTests: XCTest {
     }
     
     // MARK: - Helpers
+    
+    private func makeSUT(file: StaticString = #file, line: UInt = #line) -> (sut: FeedPresenter, view: ViewSpy) {
+        let view =  ViewSpy()
+        let sut = FeedPresenter(view: view)
+        
+         trackMemoryLeaks(view, file: file, line: line)
+         trackMemoryLeaks(sut, file: file, line: line)
+        
+        return (sut, view)
+    }
     
     private class ViewSpy {
         let messages = [Any]()
